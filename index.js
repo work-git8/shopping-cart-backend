@@ -13,7 +13,7 @@ let layaltyRate = 2; //2 points per $1
 app.get('/cart-total', (req, res) => {
   let newItemPrice = parseFloat(req.query.newItemPrice);
   let cartTotal = parseFloat(req.query.cartTotal);
-  res.send((newItemPrice * cartTotal).toString());
+  res.send((newItemPrice + cartTotal).toString());
 });
 
 //Endpoint 2 : Create an endpoint that takes a cartTotal and isMember as a query parameter and returns final price after applying the discount.Write an Express code snippet.Declare an endpoint /membership-discount using the get keyword.Declare two variables cartTotal and isMember to take the input.Parse the cartTotal as a float to calculate the total cart value.Return the result as a string.If the Membership status = true, then the discount percentage is appliedIf the Membership status = false, no discount is appliedAPI Call: <http://localhost:3000/membership-discount?cartTotal=3600&isMember=true>.Expected Output: 3240//
